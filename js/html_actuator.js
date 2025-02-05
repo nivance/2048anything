@@ -62,7 +62,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-   inner.innerHTML = `<span class="tile-text">${tile.value}</span>`
+  inner.innerHTML = `<span class="tile-text">${tile.value}</span>`
   //inner.textContent = tile.value;
 
   if (tile.previousPosition) {
