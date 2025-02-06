@@ -1,13 +1,5 @@
 // 创建 LocalStorageManager 实例
 const storageManager = new LocalStorageManager();
-
-let basePath = './collections';
-if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    basePath = '../collections';
-}
-
-console.log("hostname==" + window.location.hostname)
-
 // Get the 'type' parameter from URL
 const urlParams = new URLSearchParams(window.location.search);
 const urlType = urlParams.get('type');
