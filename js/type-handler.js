@@ -1,12 +1,19 @@
 // 创建 LocalStorageManager 实例
 const storageManager = new LocalStorageManager();
 
+let basePath = './collections';
+if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    basePath = '../collections';
+}
+
+console.log("hostname==" + window.location.hostname)
+
 // Get the 'type' parameter from URL
 const urlParams = new URLSearchParams(window.location.search);
 const urlType = urlParams.get('type');
 const storedType = storageManager.getType();
 
-console.log("urlType==" + urlType + "storedType==" + storedType)
+console.log("urlType==" + urlType + "   storedType==" + storedType)
 
 let restart = false;
 // 确定使用哪个type值
@@ -22,13 +29,13 @@ if (!urlType) {
         // 检查请求的类型对应的文件夹是否存在
         const testImage = new Image();
         testImage.onerror = () => {
-            console.log("urlType==" + urlType + "type==" + type)
+            console.log("not found:::urlType==" + urlType + "  storedType==" + storedType)
             type = 'default';
             storageManager.setType(type);
             updateImages();
             restartGame(true);
         };
-        testImage.src = `../collections/${urlType}/1.png`;
+        testImage.src = `${basePath}/${urlType}/1.png`;
         
         type = urlType;
         restart = true;
@@ -48,7 +55,7 @@ updateImages();
 // 更新图片路径的函数
 function updateImages() {
     for (let i = 1; i <= 14; i++) {
-        const imagePath = `url("../collections/${type}/${i}.png")`;
+        const imagePath = `url("${basePath}/${type}/${i}.png")`;
         document.documentElement.style.setProperty(`--image-${i}-path`, imagePath);
     }
 }
