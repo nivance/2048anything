@@ -1,13 +1,16 @@
+// 创建 LocalStorageManager 实例
+const storageManager = new LocalStorageManager();
+
 // Get the 'type' parameter from URL
 const urlParams = new URLSearchParams(window.location.search);
 const urlType = urlParams.get('type');
-const storedType = localStorage.getItem('type');
+const storedType = storageManager.getType();
 
 let restart = false;
 // 确定使用哪个type值
 let type;
 if (!urlType) {
-    // URL参数为空，使用localStorage中的值，如果也为空则使用默认值
+    // URL参数为空，使用localStorage中的值
     type = storedType || 'default';
 } else {
     // 如果 urlType 与 storedType 相同，直接使用该值
@@ -16,15 +19,12 @@ if (!urlType) {
     } else {
         // 检查请求的类型对应的文件夹是否存在
         const testImage = new Image();
-        testImage.onerror = () => { // asyn
-            type = 'default';         // default type
-            localStorage.setItem('type', type);
+        testImage.onerror = () => {
+            type = 'default';
+            storageManager.setType(type);
             updateImages();
             restartGame(true);
         };
-        // testImage.onload = () => {
-        //     console.log("image loaded successfully");
-        // };
         testImage.src = `../collections/${urlType}/1.png`;
         
         type = urlType;
@@ -33,7 +33,7 @@ if (!urlType) {
 }
 
 // 存储最终使用的type值
-localStorage.setItem('type', type);
+storageManager.setType(type);
 
 if (restart) {
     restartGame(restart)

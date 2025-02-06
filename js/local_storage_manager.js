@@ -21,6 +21,7 @@ window.fakeStorage = {
 function LocalStorageManager() {
   this.bestScoreKey     = "bestScore";
   this.gameStateKey     = "gameState";
+  this.typeKey          = "type";
 
   var supported = this.localStorageSupported();
   this.storage = supported ? window.localStorage : window.fakeStorage;
@@ -60,4 +61,13 @@ LocalStorageManager.prototype.setGameState = function (gameState) {
 
 LocalStorageManager.prototype.clearGameState = function () {
   this.storage.removeItem(this.gameStateKey);
+};
+
+// 添加type相关的getter和setter
+LocalStorageManager.prototype.getType = function () {
+  return this.storage.getItem(this.typeKey);
+};
+
+LocalStorageManager.prototype.setType = function (type) {
+  this.storage.setItem(this.typeKey, type);
 };
