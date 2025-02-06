@@ -796,7 +796,7 @@ hr {
     bottom: 0;
     left: 0;
     background: rgba(238, 228, 218, 0.8);
-    border-radius: 18px;
+    border-radius: 6px;
     z-index: 100;
     text-align: center;
     -webkit-animation: fade-in 800ms ease 1200ms;
