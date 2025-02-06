@@ -5,8 +5,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const urlType = urlParams.get('type');
 const storedType = storageManager.getType();
 
-console.log("urlType==" + urlType + "   storedType==" + storedType)
-
+// console.log("urlType==" + urlType + "   storedType==" + storedType)
 let restart = false;
 // 确定使用哪个type值
 let type;
@@ -21,7 +20,7 @@ if (!urlType) {
         // 检查请求的类型对应的文件夹是否存在
         const testImage = new Image();
         testImage.onerror = () => {
-            console.log("not found:::urlType==" + urlType + "  storedType==" + storedType)
+            // console.log("not found:::urlType==" + urlType + "  storedType==" + storedType)
             type = 'default';
             storageManager.setType(type);
             updateImages();
@@ -53,7 +52,7 @@ function updateImages() {
 }
 
 function restartGame(restart) {
-    console.log("type=" + type + "   restart=" + restart)
+    // console.log("type=" + type + "   restart=" + restart)
     if (!restart) {
         return
     }
