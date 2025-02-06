@@ -35,7 +35,7 @@ if (!urlType) {
             updateImages();
             restartGame(true);
         };
-        testImage.src = `${basePath}/${urlType}/1.png`;
+        testImage.src = `./collections/${urlType}/1.png`;
         
         type = urlType;
         restart = true;
@@ -55,7 +55,7 @@ updateImages();
 // 更新图片路径的函数
 function updateImages() {
     for (let i = 1; i <= 14; i++) {
-        const imagePath = `url(${basePath}/${type}/${i}.png)`;
+        const imagePath = `url("../collections/${type}/${i}.png")`;
         document.documentElement.style.setProperty(`--image-${i}-path`, imagePath);
     }
 }
