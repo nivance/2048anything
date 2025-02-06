@@ -1,7 +1,7 @@
 // 创建 LocalStorageManager 实例
 const storageManager = new LocalStorageManager();
 
-let basePath = './collections';
+let basePath = '../collections';
 if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
     basePath = '../collections';
 }
