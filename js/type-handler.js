@@ -8,7 +8,7 @@ let restart = false;
 let type;
 if (!urlType) {
     // URL参数为空，使用localStorage中的值，如果也为空则使用默认值
-    type = storedType || 'president';
+    type = storedType || 'default';
 } else {
     // 如果 urlType 与 storedType 相同，直接使用该值
     if (urlType === storedType) {
@@ -17,7 +17,7 @@ if (!urlType) {
         // 检查请求的类型对应的文件夹是否存在
         const testImage = new Image();
         testImage.onerror = () => { // asyn
-            type = 'president';         // default type
+            type = 'default';         // default type
             localStorage.setItem('type', type);
             updateImages();
             restartGame(true);
