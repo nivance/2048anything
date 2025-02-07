@@ -1,18 +1,17 @@
-# 2048 anything
+# 2048 Anything
 
-https://github.com/kaloodinaz/taylor-swift-2048
-https://www.famousbirthdays.com/
-https://github.com/ovolve/2048-AI
-https://github.com/gabrielecirulli/2048
-https://github.com/andrewtdunn/startrek2048.github.io
-https://github.com/umairayub79/13th-Doctor
-https://github.com/caite21/2048
-https://github.com/lucas-burdell/2048-Bot
-https://kaloodinaz.github.io/2048-undo/
-https://kaloodinaz.github.io/2048-reverse/
-https://github.com/adamalston/2048
-https://github.com/tasxatzial/2048-game（UI）
-https://spendmoneyelonmusk.com/game/2048-elon-musk/
+This is a game of 2048, but with a twist!It is a variation of the 2024 game, and can be used to play all 2048 games.
 
+You just need to collect a set of pictures and put them under `collections`, then you can play the 2048 game with this set of pictures, similar to "Taylor Swift 2048".
 
-https://kaloodinaz.github.io/
+## How to use this project
+
+### Prerequisites
+* Collect at least 14 pictures and put them into a folder (the name of this folder will be used later).
+* clone this repository.
+* Copy the image folder to the `collections` directory of this project.
+
+### Run the game
+* Open the `index.html` file in your browser.
+* Add the parameter `type` to the URL, the parameter value is the folder name mentioned above, similar to `localhost:8080/index.html?type=president`.
+* Press Enter to start the game
