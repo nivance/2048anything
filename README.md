@@ -1,6 +1,8 @@
 # 2048 Anything
 
-This is a game of 2048, but with a twist!It is a variation of the 2024 game, and can be used to play all 2048 games.
+This is a game of 2048, but with a twist!
+
+It is a variation of the 2024 game, and can be used to play all 2048 games.
 
 You just need to collect a set of pictures and put them under `collections`, then you can play the 2048 game with this set of pictures, similar to "Taylor Swift 2048".
 
