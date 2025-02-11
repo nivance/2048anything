@@ -17,3 +17,10 @@ You just need to collect a set of pictures and put them under `collections`, the
 * Open the `index.html` file in your browser.
 * Add the parameter `type` to the URL, the parameter value is the folder name mentioned above, similar to `localhost:8080/index.html?type=president`.
 * Press Enter to start the game
+
+## 2048 AI Solver
+* https://github.com/malhotra-naman/2048-automation
+* https://github.com/JimJam019283/2048-Auto-Run/tree/main/2048-AI-master
+* https://github.com/CSHS/2048-number-frequency
+* https://github.com/bambuunet/automate_2048
+* https://github.com/WayneShears89/2048AutoComplete
